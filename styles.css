@@ -56,13 +56,6 @@ body {
 
 
 /* Estilo do card */
-.card-container {
-    display: flex;
-    justify-content: center; /* Centraliza o card */
-    align-items: center;
-    width: 100%;
-    margin-top: 30px; /* Adiciona um espaçamento entre o perfil e o card */
-}
 
 .card {
     background-color: #000000; /* Fundo preto do card */
@@ -98,7 +91,7 @@ ul li a:hover {
 .social-icons {
     display: flex;
     justify-content: center; /* Centraliza os ícones */
-    margin: 10px 0; /* Espaçamento entre o perfil e os ícones */
+    margin: 20px 0; /* Espaçamento entre o perfil e os ícones */
 }
 
 .social-icon {
@@ -109,7 +102,7 @@ ul li a:hover {
 }
 
 .social-icon:hover {
-    color: #f4a300; /* Cor de destaque quando passar o mouse */
+    color: #0086f4; /* Cor de destaque quando passar o mouse */
 }
 
 /* Estilo geral do card-container */
@@ -178,17 +171,45 @@ ul li a:hover {
 
 /* Estilo do título principal */
 h1 {
+    display: inline-flex;
+    align-items: center;
     margin-top: 15px; /* Espaço acima do título */
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: bold;
     color: white;
 }
 
 /* Estilo do subtítulo */
 h2 {
-    margin-top: 10px; /* Espaço entre o h1 e o h2 */
+    margin-top: 15px; /* Espaço entre o h1 e o h2 */
     font-size: 1.5rem;
     font-weight: normal;
     color: white;
     margin-bottom: 10px;
+}
+.verified {
+    color: #4e89e2; /* Cor azul do ícone de verificação */
+    margin-left: 8px; /* Pequeno espaçamento entre o ícone e o texto */
+    font-size: 1.2rem; /* Tamanho do ícone */
+}
+
+.pitch-section {
+    background-color: #838181; /* Fundo cinza */
+    padding: 20px;
+    border-radius: 12px; /* Bordas arredondadas */
+    max-width: 800px;
+    margin: 20px auto; /* Centraliza a seção */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+h3 {
+    text-align: justify;
+    font-size: 1rem; /* Fonte menor */
+    line-height: 1.5;
+    color: #000000; /* Cor do texto */
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+}
+
+h3:last-child {
+    margin-bottom: 0; /* Remove o espaçamento do último parágrafo */
 }
