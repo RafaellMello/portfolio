@@ -213,3 +213,121 @@ h3 {
 h3:last-child {
     margin-bottom: 0; /* Remove o espaçamento do último parágrafo */
 }
+
+.portfolio-section {
+    margin-top: 40px;
+    background-color: #000000; /* Fundo preto */
+    padding: 20px;
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra suave */
+    text-align: center; /* Centraliza o conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que ocupe a altura total da tela */
+}
+
+.portfolio-title {
+    font-size: 1.8rem; /* Tamanho do título */
+    color: white; /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 80px; /* Espaçamento entre os itens */
+    max-width: 1600px; /* Largura máxima do grid */
+    margin-top: 40px;
+    margin-left: 0px; /* Mantido como estava */
+    margin-right: 60px; /* Mantido como estava */
+    justify-items: center; /* Garante que os itens dentro da grid fiquem centralizados */
+}
+
+.portfolio-item {
+    background-color: #1a1a1a; /* Fundo escuro para os itens */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    width: 800px; /* Largura fixa */
+    height: 450px; /* Altura fixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui os elementos verticalmente dentro do item */
+    position: relative; /* Para garantir que a imagem de hover fique atrás do conteúdo */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Sombra mais intensa no hover */
+}
+
+.project-title {
+    background-color: #0f3452; /* Cor de destaque para o título */
+    color: white; /* Cor do texto */
+    padding: 10px;
+    margin: 0;
+    font-size: 1.2rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante que o título ocupe toda a largura */
+    position: relative; /* Garante que o título fique acima da imagem */
+    z-index: 2; /* Garante que o título fique visível acima da imagem */
+}
+
+/* Imagem normal */
+.portfolio-banner {
+    width: 100%; /* Ocupa toda a largura do container */
+    height: 100%; /* Ocupa toda a altura do container */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+    transition: opacity 0.3s ease; /* Transição suave de opacidade */
+}
+
+/* Imagem de hover (inicialmente invisível) */
+.portfolio-banner-hover {
+    width: 100%; /* Ocupa toda a largura do container */
+    height: 100%; /* Ocupa toda a altura do container */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+    position: absolute; /* Posiciona a imagem sobre a outra */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 1; /* Coloca a imagem de hover abaixo do título e do conteúdo */
+}
+
+/* Efeito de hover: quando passar o mouse sobre o item, a imagem normal desaparece e a de hover aparece */
+.portfolio-item:hover .portfolio-banner {
+    opacity: 0; /* Esconde a imagem normal */
+}
+
+.portfolio-item:hover .portfolio-banner-hover {
+    opacity: 1; /* Exibe a imagem de hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1600px) {
+    .portfolio-item {
+        width: 90%; /* Ajusta a largura para telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    }
+
+    .portfolio-item {
+        width: 90%; /* Ajusta a largura para telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+
+
+
+
