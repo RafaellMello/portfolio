@@ -31,6 +31,8 @@ body {
     width: 80%;
     max-width: 800px; /* Limita o tamanho da container */
     text-align: center;
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 1.5s ease-out forwards; /* Animação de fade-in */
 }
 
 /* Seção de perfil (imagem e nome) */
@@ -245,6 +247,7 @@ h3:last-child {
     justify-items: center; /* Garante que os itens dentro da grid fiquem centralizados */
 }
 
+/* Estilo dos itens do portfólio */
 .portfolio-item {
     background-color: #1a1a1a; /* Fundo escuro para os itens */
     border-radius: 10px; /* Bordas arredondadas */
@@ -257,6 +260,9 @@ h3:last-child {
     flex-direction: column;
     justify-content: space-between; /* Distribui os elementos verticalmente dentro do item */
     position: relative; /* Para garantir que a imagem de hover fique atrás do conteúdo */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Inicialmente movido para baixo */
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
 
 .portfolio-item:hover {
@@ -274,6 +280,116 @@ h3:last-child {
     width: 100%; /* Garante que o título ocupe toda a largura */
     position: relative; /* Garante que o título fique acima da imagem */
     z-index: 2; /* Garante que o título fique visível acima da imagem */
+}
+
+/* Imagem normal */
+.portfolio-banner {
+    width: 100%; /* Ocupa toda a largura do container */
+    height: 100%; /* Ocupa toda a altura do container */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+    transition: opacity 0.3s ease; /* Transição suave de opacidade */
+}
+
+/* Imagem de hover (inicialmente invisível) */
+.portfolio-banner-hover {
+    width: 100%; /* Ocupa toda a largura do container */
+    height: 100%; /* Ocupa toda a altura do container */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    display: block;
+    position: absolute; /* Posiciona a imagem sobre a outra */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 1; /* Coloca a imagem de hover abaixo do título e do conteúdo */
+}
+
+/* Efeito de hover: quando passar o mouse sobre o item, a imagem normal desaparece e a de hover aparece */
+.portfolio-item:hover .portfolio-banner {
+    opacity: 0; /* Esconde a imagem normal */
+}
+
+.portfolio-item:hover .portfolio-banner-hover {
+    opacity: 1; /* Exibe a imagem de hover */
+}
+
+.portfolio-item {
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+}
+/* Responsividade para telas menores */
+@media (max-width: 1600px) {
+    .portfolio-item {
+        width: 90%; /* Ajusta a largura para telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    }
+
+    .portfolio-item {
+        width: 90%; /* Ajusta a largura para telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+.project-button {
+    display: block; /* Torna o botão um bloco, para ele ocupar 100% da largura */
+    margin-top: -60px;
+    padding: 15px;
+    background-color: #323435; /* Cor de fundo igual ao título */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem; /* Tamanho de fonte igual ao título */
+    width: 100%; /* Faz o botão ocupar toda a largura do item */
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas somente na parte inferior */
+    position: relative; /* Garante que o botão não sobreponha o conteúdo */
+    z-index: 2; /* Garante que o botão apareça acima da imagem */
+    box-sizing: border-box; /* Garante que o padding não afete a largura do botão */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+.project-button:hover {
+    background-color: #000000; /* Cor de fundo no hover */
+    color: #ffffff
+}
+
+/* Estilos para a animação fade-in do portfólio */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Itens do portfólio */
+.portfolio-item {
+    background-color: #1a1a1a; /* Fundo escuro para os itens */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    width: 800px; /* Largura fixa */
+    height: 450px; /* Altura fixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui os elementos verticalmente dentro do item */
+    position: relative; /* Para garantir que a imagem de hover fique atrás do conteúdo */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Inicialmente movido para baixo */
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out; /* Suaviza a transição */
+}
+
+/* Classe para animação de fade-in ao ser visível */
+.portfolio-item.animate {
+    animation: fadeIn 2s ease-out forwards;
 }
 
 /* Imagem normal */
@@ -327,28 +443,8 @@ h3:last-child {
     }
 }
 
-.project-button {
-    display: block; /* Torna o botão um bloco, para ele ocupar 100% da largura */
-    margin-top: -60px;
-    padding: 15px;
-    background-color: #ffffff; /* Cor de fundo igual ao título */
-    color: rgb(12, 5, 5); /* Cor do texto */
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2rem; /* Tamanho de fonte igual ao título */
-    width: 100%; /* Faz o botão ocupar toda a largura do item */
-    border-radius: 0 0 10px 10px; /* Bordas arredondadas somente na parte inferior */
-    position: relative; /* Garante que o botão não sobreponha o conteúdo */
-    z-index: 2; /* Garante que o botão apareça acima da imagem */
-    box-sizing: border-box; /* Garante que o padding não afete a largura do botão */
-    transition: background-color 0.3s ease; /* Transição suave para o hover */
-}
-
-.project-button:hover {
-    background-color: #323435; /* Cor de fundo no hover */
-    color: #ffffff
-}
 
 
+/* Para uma página com mais seções, você pode adicionar mais seletores de forma incremental */
 
 
