@@ -130,7 +130,7 @@ ul li a:hover {
     margin-bottom: 15px; /* Espaçamento entre as seções */
     padding: 15px;
     background-color: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Linha branca suave */
+    border: 1px solid #ffffff33; /* Linha branca suave */
     border-radius: 5px;
     transition: all 0.3s ease; /* Transição suave para o hover */
     position: relative;
@@ -265,7 +265,7 @@ h3:last-child {
 }
 
 .project-title {
-    background-color: #0f3452; /* Cor de destaque para o título */
+    background-color: #323435; /* Cor de destaque para o título */
     color: white; /* Cor do texto */
     padding: 10px;
     margin: 0;
@@ -327,6 +327,27 @@ h3:last-child {
     }
 }
 
+.project-button {
+    display: block; /* Torna o botão um bloco, para ele ocupar 100% da largura */
+    margin-top: -60px;
+    padding: 15px;
+    background-color: #ffffff; /* Cor de fundo igual ao título */
+    color: rgb(12, 5, 5); /* Cor do texto */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem; /* Tamanho de fonte igual ao título */
+    width: 100%; /* Faz o botão ocupar toda a largura do item */
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas somente na parte inferior */
+    position: relative; /* Garante que o botão não sobreponha o conteúdo */
+    z-index: 2; /* Garante que o botão apareça acima da imagem */
+    box-sizing: border-box; /* Garante que o padding não afete a largura do botão */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+.project-button:hover {
+    background-color: #323435; /* Cor de fundo no hover */
+    color: #ffffff
+}
 
 
 
