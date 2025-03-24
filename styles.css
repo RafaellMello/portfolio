@@ -425,23 +425,47 @@ h3:last-child {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 1600px) {
-    .portfolio-item {
-        width: 90%; /* Ajusta a largura para telas menores */
-        height: auto; /* Altura automática para manter a proporção */
-    }
-}
-
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+        display: flex; /* Usar flexbox para a disposição */
+        flex-direction: column; /* Os itens serão alinhados em uma coluna */
+        align-items: flex-end; /* Alinha os itens à direita */
+        justify-content: center; /* Mantém os itens centralizados verticalmente */
+        width: 100%; /* Garante que a grid ocupe toda a largura */
+        padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais */
+        margin-left: 156px;
     }
 
     .portfolio-item {
-        width: 90%; /* Ajusta a largura para telas menores */
-        height: auto; /* Altura automática para manter a proporção */
+        width: 350px;
+        height: 300px; /* Garante que os itens ocupem toda a largura disponível */
+        max-width: 800px; /* Limita a largura máxima de cada item */
+        margin-bottom: 20px; /* Espaçamento entre os itens */
+        display: flex; /* Usar flexbox dentro do item */
+        flex-direction: column; /* Garante que o conteúdo dentro do item seja disposto em coluna */
+        align-items: center; /* Alinha o conteúdo dos itens ao centro */
+    }
+
+    /* Ajusta a imagem para que fiquem maiores no celular */
+    .portfolio-banner,
+    .portfolio-banner-hover {
+        width: 100%; /* As imagens ocupam toda a largura disponível */
+        height: 300px; /* Ajusta a altura das imagens */
+        object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    }
+
+    .project-button {
+        padding: 12px;
+        font-size: 1rem; /* Ajusta o tamanho da fonte no celular */
     }
 }
+
+
+
+
+
+
+
 
 
 
