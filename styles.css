@@ -410,7 +410,7 @@ h3:last-child {
     width: 100%; /* Ocupa toda a largura do container */
     height: 100%; /* Ocupa toda a altura do container */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    display: block;
+    display: none;
     position: absolute; /* Posiciona a imagem sobre a outra */
     top: 0;
     left: 0;
@@ -425,7 +425,22 @@ h3:last-child {
 }
 
 .portfolio-item:hover .portfolio-banner-hover {
-    opacity: 1; /* Exibe a imagem de hover */
+    display: block; /* Exibe a imagem de hover */
+    opacity:1;
+}
+
+.portfolio-item:hover .portfolio-banner-hover {
+    animation: playVideo 0.1s forwards; /* Inicia o vídeo ao passar o mouse */
+}
+
+/* Animação para garantir que o vídeo comece a rodar ao ativar o hover */
+@keyframes playVideo {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Responsividade para telas menores */
