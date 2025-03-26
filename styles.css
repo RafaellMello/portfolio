@@ -42,8 +42,8 @@ body {
 
 /* Estilo da imagem do perfil */
 .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 155px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
