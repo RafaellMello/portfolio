@@ -42,12 +42,13 @@ body {
 
 /* Estilo da imagem do perfil */
 .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 155px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    align-items: center;
 }
 
 .profile-image img {
@@ -296,7 +297,7 @@ h3:last-child {
     width: 100%; /* Ocupa toda a largura do container */
     height: 100%; /* Ocupa toda a altura do container */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    display: block;
+    display: none;
     position: absolute; /* Posiciona a imagem sobre a outra */
     top: 0;
     left: 0;
@@ -312,6 +313,7 @@ h3:last-child {
 
 .portfolio-item:hover .portfolio-banner-hover {
     opacity: 1; /* Exibe a imagem de hover */
+    display: block;
 }
 
 .portfolio-item {
@@ -337,21 +339,23 @@ h3:last-child {
 }
 
 .project-button {
-    display: block; /* Torna o botão um bloco, para ele ocupar 100% da largura */
+    display: block;
     margin-top: -60px;
-    padding: 15px;
-    background-color: #323435; /* Cor de fundo igual ao título */
-    color: rgb(255, 255, 255); /* Cor do texto */
+    padding: 15px 15px 17px; /* Aumenta o padding inferior em 2px */
+    background-color: #323435;
+    color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
-    font-size: 1.2rem; /* Tamanho de fonte igual ao título */
-    width: 100%; /* Faz o botão ocupar toda a largura do item */
-    border-radius: 0 0 10px 10px; /* Bordas arredondadas somente na parte inferior */
-    position: relative; /* Garante que o botão não sobreponha o conteúdo */
-    z-index: 2; /* Garante que o botão apareça acima da imagem */
-    box-sizing: border-box; /* Garante que o padding não afete a largura do botão */
-    transition: background-color 0.3s ease; /* Transição suave para o hover */
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
+
+
 
 .project-button:hover {
     background-color: #000000; /* Cor de fundo no hover */
