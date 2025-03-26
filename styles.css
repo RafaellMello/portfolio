@@ -250,20 +250,16 @@ h3:last-child {
 
 /* Estilo dos itens do portfólio */
 .portfolio-item {
-    background-color: #1a1a1a; /* Fundo escuro para os itens */
-    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #1a1a1a;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     width: 800px; /* Largura fixa */
-    height: 450px; /* Altura fixa */
+    height: 450px; /* Altura fixa ou ajuste para "auto" dependendo do conteúdo */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribui os elementos verticalmente dentro do item */
-    position: relative; /* Para garantir que a imagem de hover fique atrás do conteúdo */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(20px); /* Inicialmente movido para baixo */
-    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+    justify-content: space-between; /* Isso garante que os itens fiquem distribuidos verticalmente */
+    position: relative; /* Garante que o botão fique dentro do contêiner */
 }
 
 .portfolio-item:hover {
@@ -340,27 +336,28 @@ h3:last-child {
 
 .project-button {
     display: block;
-    margin-top: -60px;
-    padding: 15px 15px 17px; /* Aumenta o padding inferior em 2px */
+    padding: 15px 15px 22px; /* Ajuste o padding para esticar para baixo */
     background-color: #323435;
     color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
     font-size: 1.2rem;
     width: 100%;
-    border-radius: 0 0 10px 10px;
-    position: relative;
-    z-index: 3;
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas no final */
+    position: absolute;
+    bottom: -5px; /* Ajusta o botão para ficar 5px abaixo da parte inferior do contêiner */
+    left: 0;
+    z-index: 2;
     box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
 
 
-
 .project-button:hover {
     background-color: #000000; /* Cor de fundo no hover */
-    color: #ffffff
+    color: #ffffff;
 }
+
 
 /* Estilos para a animação fade-in do portfólio */
 @keyframes fadeIn {
@@ -374,21 +371,17 @@ h3:last-child {
     }
 }
 
-/* Itens do portfólio */
 .portfolio-item {
     background-color: #1a1a1a; /* Fundo escuro para os itens */
     border-radius: 10px; /* Bordas arredondadas */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra suave */
     width: 800px; /* Largura fixa */
-    height: 450px; /* Altura fixa */
+    height: 450px; /* Altura fixa (se necessário ajuste para "auto" em casos dinâmicos) */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribui os elementos verticalmente dentro do item */
-    position: relative; /* Para garantir que a imagem de hover fique atrás do conteúdo */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(20px); /* Inicialmente movido para baixo */
-    transition: opacity 2.5s ease-out, transform 2.5s ease-out; /* Suaviza a transição */
+    justify-content: space-between;
+    position: relative; /* Para garantir que o botão fique posicionado dentro do item */
 }
 
 /* Classe para animação de fade-in ao ser visível */
