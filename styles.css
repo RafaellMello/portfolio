@@ -260,6 +260,7 @@ h3:last-child {
     flex-direction: column;
     justify-content: space-between; /* Isso garante que os itens fiquem distribuidos verticalmente */
     position: relative; /* Garante que o botão fique dentro do contêiner */
+    opacity: 0;
 }
 
 .portfolio-item:hover {
