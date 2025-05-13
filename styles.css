@@ -15,16 +15,147 @@
 /* Cor de fundo do site */
 body {
     font-family: 'FontDev', sans-serif;
-    background-color: #000000; /* Fundo preto */
     color: white;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha o conteúdo no topo */
+    align-items: flex-start;
     height: 100vh;
     margin: 0;
     padding: 0;
-    animation: fadeIn 1.5s ease-in-out; /* Animação de fade-in no body */
+    position: relative;
+    overflow-y: auto; /* Permite rolar a página */
 }
+
+/* Gradiente de fundo */
+html {
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden; /* Impede o transbordamento da página */
+}
+
+/* Estrelas animadas */
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -2;
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+        1000px 200px #FFF, 1200px 400px #FFF, 800px 600px #FFF,
+        150px 900px #FFF, 400px 1100px #FFF, 700px 1300px #FFF,
+        300px 1700px #FFF, 900px 1900px #FFF, 200px 2100px #FFF,
+        1200px 2400px #FFF, 500px 2700px #FFF, 1300px 2800px #FFF,
+        700px 2900px #FFF, 900px 3200px #FFF, 1000px 3500px #FFF,
+        1100px 3700px #FFF, 1400px 3800px #FFF, 800px 4100px #FFF,
+        1200px 4300px #FFF, 1500px 4400px #FFF, 100px 4600px #FFF,
+        1300px 4800px #FFF, 500px 5000px #FFF, 700px 5300px #FFF,
+        900px 5500px #FFF, 1500px 5600px #FFF, 300px 5900px #FFF,
+        1200px 6000px #FFF, 800px 6200px #FFF, 1300px 6300px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 100%;
+    box-shadow: inherit;
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+        500px 300px #FFF, 100px 700px #FFF, 300px 1000px #FFF,
+        900px 1200px #FFF, 600px 1500px #FFF, 200px 1600px #FFF,
+        700px 1700px #FFF, 1200px 1800px #FFF, 1300px 1900px #FFF,
+        800px 2100px #FFF, 1500px 2200px #FFF, 1100px 2300px #FFF,
+        300px 2400px #FFF, 700px 2500px #FFF, 1300px 2600px #FFF,
+        800px 2800px #FFF, 1200px 3000px #FFF, 1500px 3100px #FFF,
+        1100px 3300px #FFF, 600px 3500px #FFF, 1000px 3700px #FFF,
+        1200px 3800px #FFF, 1500px 3900px #FFF, 100px 4000px #FFF,
+        500px 4200px #FFF, 700px 4300px #FFF, 800px 4500px #FFF;
+    animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 100%;
+    box-shadow: inherit;
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 
+        200px 400px #FFF, 600px 800px #FFF, 1000px 1000px #FFF,
+        400px 1400px #FFF, 900px 1600px #FFF, 1200px 1700px #FFF,
+        1500px 1800px #FFF, 1100px 2000px #FFF, 600px 2200px #FFF,
+        1500px 2300px #FFF, 800px 2400px #FFF, 1300px 2500px #FFF,
+        900px 2700px #FFF, 1100px 2900px #FFF, 500px 3000px #FFF,
+        1300px 3200px #FFF, 700px 3300px #FFF, 800px 3500px #FFF,
+        1200px 3600px #FFF, 1500px 3800px #FFF, 600px 4000px #FFF,
+        1000px 4100px #FFF, 500px 4200px #FFF, 700px 4400px #FFF,
+        800px 4600px #FFF, 1000px 4700px #FFF;
+    animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 100%;
+    box-shadow: inherit;
+}
+
+
+/* Título estilizado */
+#title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'lato', sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: -60px;
+    padding-left: 10px;
+}
+
+#title span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Animação das estrelas */
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
 
 /* Container geral */
 .container {
@@ -219,10 +350,10 @@ h3:last-child {
 
 .portfolio-section {
     margin-top: 40px;
-    background-color: #000000; /* Fundo preto */
+    background-color: transparent; /* Fundo preto */
     padding: 20px;
     border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra suave */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.6); /* Sombra suave */
     text-align: center; /* Centraliza o conteúdo */
     display: flex;
     flex-direction: column;
@@ -232,9 +363,11 @@ h3:last-child {
 }
 
 .portfolio-title {
-    font-size: 1.8rem; /* Tamanho do título */
+    font-size: 70px; /* Tamanho do título */
     color: white; /* Cor do texto */
     margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+
 }
 
 .portfolio-grid {
