@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }, {
-        threshold: 0.5 // 50% do item precisa estar visível para disparar a animação
+        threshold: 0.4 // 40% do item precisa estar visível para disparar a animação
     });
 
     // Seleciona todos os itens de portfólio para observar
