@@ -29,7 +29,7 @@ body {
 /* Gradiente de fundo */
 html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, #20384e 0%, #090A0F 100%);
     overflow: hidden; /* Impede o transbordamento da página */
 }
 
@@ -311,6 +311,7 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Estilo do subtítulo */
@@ -322,13 +323,13 @@ h2 {
     margin-bottom: 10px;
 }
 .verified {
-    color: #4e89e2; /* Cor azul do ícone de verificação */
+    color: #0095F6; /* Cor azul do ícone de verificação */
     margin-left: 8px; /* Pequeno espaçamento entre o ícone e o texto */
     font-size: 1.2rem; /* Tamanho do ícone */
 }
 
 .pitch-section {
-    background-color: #838181; /* Fundo cinza */
+    background-color: #0f0f0f; /* Fundo cinza */
     padding: 20px;
     border-radius: 12px; /* Bordas arredondadas */
     max-width: 800px;
@@ -340,8 +341,9 @@ h3 {
     text-align: justify;
     font-size: 1rem; /* Fonte menor */
     line-height: 1.5;
-    color: #000000; /* Cor do texto */
+    color: #e2dfdf; /* Cor do texto */
     margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+    font-weight: 100;
 }
 
 h3:last-child {
@@ -374,10 +376,10 @@ h3:last-child {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 80px; /* Espaçamento entre os itens */
-    max-width: 1600px; /* Largura máxima do grid */
+    max-width: auto; /* Largura máxima do grid */
     margin-top: 40px;
     margin-left: 0px; /* Mantido como estava */
-    margin-right: 60px; /* Mantido como estava */
+    margin-right: 00px; /* Mantido como estava */
     justify-items: center; /* Garante que os itens dentro da grid fiquem centralizados */
 }
 
@@ -449,24 +451,7 @@ h3:last-child {
 .portfolio-item {
     transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
-/* Responsividade para telas menores */
-@media (max-width: 1600px) {
-    .portfolio-item {
-        width: 90%; /* Ajusta a largura para telas menores */
-        height: auto; /* Altura automática para manter a proporção */
-    }
-}
 
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* 1 coluna em telas menores */
-    }
-
-    .portfolio-item {
-        width: 90%; /* Ajusta a largura para telas menores */
-        height: auto; /* Altura automática para manter a proporção */
-    }
-}
 
 .project-button {
     display: block;
@@ -573,38 +558,118 @@ h3:last-child {
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .portfolio-grid {
-        display: flex; /* Usar flexbox para a disposição */
-        flex-direction: column; /* Os itens serão alinhados em uma coluna */
-        align-items: flex-end; /* Alinha os itens à direita */
-        justify-content: center; /* Mantém os itens centralizados verticalmente */
-        width: 100%; /* Garante que a grid ocupe toda a largura */
-        padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais */
-        margin-left: 156px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha horizontalmente ao centro */
+        justify-content: flex-start;
+        width: 90%;
+        padding: 0 10px;
+        margin: 0 auto; /* Centraliza o container inteiro */
+        box-sizing: border-box;
     }
 
     .portfolio-item {
         width: 350px;
-        height: 300px; /* Garante que os itens ocupem toda a largura disponível */
-        max-width: 800px; /* Limita a largura máxima de cada item */
-        margin-bottom: 20px; /* Espaçamento entre os itens */
-        display: flex; /* Usar flexbox dentro do item */
-        flex-direction: column; /* Garante que o conteúdo dentro do item seja disposto em coluna */
-        align-items: center; /* Alinha o conteúdo dos itens ao centro */
+        height: 300px;
+        max-width: 800px; /* Limita largura do item */
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    /* Ajusta a imagem para que fiquem maiores no celular */
     .portfolio-banner,
     .portfolio-banner-hover {
-        width: 100%; /* As imagens ocupam toda a largura disponível */
-        height: 300px; /* Ajusta a altura das imagens */
-        object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .project-button {
         padding: 12px;
-        font-size: 1rem; /* Ajusta o tamanho da fonte no celular */
+        font-size: 1rem;
     }
 }
+
+/* Responsividade para TELA TABLET MAIOR QUE 768 WIDTH */
+@media (min-width: 800px) and (max-width: 1025px) {
+    .portfolio-section {
+    width: 800px; /* Aumenta para caber as colunas do grid */
+    max-width: 100%; /* Para não ultrapassar o tamanho da tela */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 10px; /* Pequeno padding para evitar que encoste na borda */
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 460px);
+    gap: 20px;
+    max-width: calc(2 * 460px + 20px);
+    margin: 40px auto 0 auto; /* centraliza horizontalmente e remove margens laterais */
+    box-sizing: border-box;
+    justify-content: start;
+    align-items: start; /* start costuma funcionar melhor para grids */ /* empurra o grid 40px para a esquerda */
+  }
+
+  .portfolio-item {
+    width: 460px !important; /* !important para sobrescrever o 800px fora do media */
+    height: 300px !important; /* altura menor */
+    margin: 0 auto;
+    opacity: 1 !important; /* garantir visibilidade */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 850px) {
+    .portfolio-section {
+    width: 800px; /* Aumenta para caber as colunas do grid */
+    max-width: 100%; /* Para não ultrapassar o tamanho da tela */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 10px; /* Pequeno padding para evitar que encoste na borda */
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: calc(2 * 460px + 20px);
+    margin: 40px auto 0 auto; /* centraliza horizontalmente e remove margens laterais */
+    box-sizing: border-box;
+    justify-content: start;
+    align-items: start; /* start costuma funcionar melhor para grids */
+  }
+
+  .portfolio-item {
+    width: 450px !important; /* !important para sobrescrever o 800px fora do media */
+    height: 290px !important; /* altura menor */
+    margin: 0 auto;
+    opacity: 1 !important; /* garantir visibilidade */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
+
+
+
+
+
+
 
 
 
