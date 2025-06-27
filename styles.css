@@ -1,4 +1,18 @@
 /* Reset básico */
+/* Reset box-sizing para evitar cálculo estranho de largura */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* evita scroll horizontal e possíveis deslocamentos */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +38,7 @@ body {
     padding: 0;
     position: relative;
     overflow-y: auto; /* Permite rolar a página */
+    width: 100%;
 }
 
 /* Gradiente de fundo */
@@ -31,6 +46,7 @@ html {
     height: 100%;
     background: radial-gradient(ellipse at bottom, #20384e 0%, #090A0F 100%);
     overflow: hidden; /* Impede o transbordamento da página */
+    width: 100%;
 }
 
 /* Estrelas animadas */
@@ -159,16 +175,17 @@ html {
 
 /* Container geral */
 .container {
-    width: 80%;
-    max-width: 800px; /* Limita o tamanho da container */
-    text-align: center;
-    opacity: 0; /* Começa invisível */
-    animation: fadeIn 1.5s ease-out forwards; /* Animação de fade-in */
+    width: 90vw;         /* igual à largura da whyme-section */
+    max-width: 1600px;   /* igual ou maior que whyme-section */
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
 /* Seção de perfil (imagem e nome) */
 .profile-section {
     margin-top: 60px; /* Move a profile-section mais para cima */
+        text-align: center;
 }
 
 /* Estilo da imagem do perfil */
@@ -188,6 +205,9 @@ html {
     object-fit: cover;
 }
 
+.logos-section {
+    text-align: center;
+}
 
 /* Estilo do card */
 
@@ -226,6 +246,7 @@ ul li a:hover {
     display: flex;
     justify-content: center; /* Centraliza os ícones */
     margin: 20px 0; /* Espaçamento entre o perfil e os ícones */
+    align-items: center;
 }
 
 .social-icon {
@@ -664,22 +685,89 @@ h3:last-child {
   }
 }
 
+/* WHY ME SECTION */
+
+.whyme-section {
+  width: 90vw;
+  max-width: 1600px;
+  padding: 80px 40px; /* espaçamento da viewport */
+  margin: 30px auto;
+  background-color: #312e2e;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.whyme-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.whyme-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between; /* empurra titulo e texto para bordas */
+  width: 100%; /* para ocupar toda largura da container */
+  padding: 0;  /* garantir sem padding */
+}
+
+.whyme-title {
+  flex: 1 1 auto;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ece6e6;
+  line-height: 1.4;
+  min-width: 0;   /* remove restrição */
+  margin: 0;      /* remove margem */
+  padding: 0;     /* remove padding */
+  text-align: left;
+}
+
+.separator {
+  flex: 0 0 2px;
+  background-color: #555;
+  height: 100%;
+  align-self: center;
+  display: block;
+}
+
+.whyme-text {
+  flex: 2 1 auto;
+  font-size: 18px;
+  color: #ece6e6;
+  line-height: 1.7;
+  text-align: justify;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 700px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .whyme-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .whyme-title,
+  .whyme-text {
+    flex: unset;
+    width: 100%;
+    text-align: center;
+  }
+  .separator {
+    display: none;
+  }
+  .whyme-text {
+    text-align: justify;
+  }
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Para uma página com mais seções, você pode adicionar mais seletores de forma incremental */
 
 
