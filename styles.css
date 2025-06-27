@@ -690,12 +690,29 @@ h3:last-child {
 .whyme-section {
   width: 90vw;
   max-width: 1600px;
-  padding: 80px 40px; /* espaçamento da viewport */
+  padding: 80px 40px;
   margin: 30px auto;
-  background-color: #312e2e;
   border-radius: 20px;
   box-sizing: border-box;
+
+  /* Gradient animado */
+  background: linear-gradient(270deg, #111010, #030531, #312e2e, #3b3939);
+  background-size: 800% 800%;
+  animation: gradientShift 20s ease infinite;
 }
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .whyme-container {
   width: 95%;
