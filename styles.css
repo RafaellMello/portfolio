@@ -727,14 +727,16 @@ h3:last-child {
   bottom: 0;
   z-index: -1;
   border-radius: 20px;
-  background: linear-gradient(270deg,
-    rgba(17, 16, 16, 0.15),
-    rgba(3, 5, 49, 0.1),
-    rgba(49, 46, 46, 0.15),
-    rgba(59, 57, 57, 0.1)
+  background: linear-gradient(
+    270deg,
+    rgba(17, 16, 16, 0.08),
+    rgba(3, 5, 49, 0.06),
+    rgba(49, 46, 46, 0.08),
+    rgba(59, 57, 57, 0.06)
   );
   background-size: 800% 800%;
   animation: gradientShift 20s ease infinite;
+}
 }
 
 @keyframes gradientShift {
