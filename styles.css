@@ -875,6 +875,18 @@ h3:last-child {
   }
 }
 
+@media (max-width: 768px) {
+  .pitch-section {
+    display: none;
+  }
+  .portfolio-title {
+    font-size: 50px;
+  }
+  .whyme-section {
+    margin-top: -40px;
+  }
+
+}
 
 
 
