@@ -829,8 +829,12 @@ h3:last-child {
 
 .whyme-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 10px rgba(8, 108, 216, 0.4),  /* brilho mais próximo */
+    0 0 20px rgba(1, 52, 107, 0.3),  /* brilho médio */
+    0 6px 15px rgba(0, 0, 0, 0.3);    /* sombra normal de elevação */
 }
+
 
 .whyme-desc {
   font-size: 14px;
