@@ -686,17 +686,34 @@ h3:last-child {
 }
 
 /* WHY ME SECTION */
-
 .whyme-section {
+  position: relative;
   width: 90vw;
   max-width: 1600px;
   padding: 80px 40px;
   margin: 30px auto;
   border-radius: 20px;
   box-sizing: border-box;
+  overflow: hidden;
+  background: transparent; /* fundo base transparente */
+  z-index: 1;
+}
 
-  /* Gradient animado */
-  background: linear-gradient(270deg, #111010, #030531, #312e2e, #3b3939);
+.whyme-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(270deg,
+    rgba(17, 16, 16, 0.15),
+    rgba(3, 5, 49, 0.1),
+    rgba(49, 46, 46, 0.15),
+    rgba(59, 57, 57, 0.1)
+  );
   background-size: 800% 800%;
   animation: gradientShift 20s ease infinite;
 }
@@ -726,9 +743,9 @@ h3:last-child {
   gap: 40px;
   align-items: center;
   flex-wrap: nowrap;
-  justify-content: space-between; /* empurra titulo e texto para bordas */
-  width: 100%; /* para ocupar toda largura da container */
-  padding: 0;  /* garantir sem padding */
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
 }
 
 .whyme-title {
@@ -737,9 +754,9 @@ h3:last-child {
   font-weight: bold;
   color: #ece6e6;
   line-height: 1.4;
-  min-width: 0;   /* remove restrição */
-  margin: 0;      /* remove margem */
-  padding: 0;     /* remove padding */
+  min-width: 0;
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
@@ -751,16 +768,59 @@ h3:last-child {
   display: block;
 }
 
-.whyme-text {
+/* NOVO: Grid com 4 cards */
+.whyme-grid {
   flex: 2 1 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* força 2 colunas */
+  gap: 20px;
+  max-width: 700px;
+}
+
+.whyme-card {
+  background-color: rgb(50, 52, 53);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui topo e base */
+  align-items: center;
+  min-height: 180px; /* altura mínima responsiva */
+  text-align: center;
+}
+
+.whyme-card i {
+  font-size: 32px;
+  color: #f1f1f1;
+  margin-bottom: 12px;
+  margin-top: 37px;
+}
+
+.whyme-card span {
   font-size: 18px;
   color: #ece6e6;
-  line-height: 1.7;
-  text-align: justify;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  max-width: 700px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+
+.whyme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whyme-desc {
+  font-size: 14px;
+  color: #cccccc;
+  font-weight: 400;
+  margin-top: 6px;
+  line-height: 1.4;
+  max-width: 90%;
+  letter-spacing: -0.9px; 
 }
 
 /* Responsivo */
@@ -769,19 +829,33 @@ h3:last-child {
     flex-direction: column;
     gap: 20px;
   }
-  .whyme-title,
-  .whyme-text {
+
+  .whyme-title {
     flex: unset;
     width: 100%;
     text-align: center;
   }
+
   .separator {
     display: none;
   }
-  .whyme-text {
-    text-align: justify;
+
+  .whyme-grid {
+    width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .whyme-grid {
+    grid-template-columns: 2fr; /* 2 por linha em celular */
+    max-width: 90vw; /* aumenta a largura nos celulares */
+  }
+
+  .whyme-card {
+    width: 100%; /* garante que o card ocupe toda a largura disponível */
+  }
+}
+
 
 
 
