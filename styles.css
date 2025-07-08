@@ -209,6 +209,13 @@ html {
     text-align: center;
 }
 
+.logo {
+    height: 50px; /* ou ajuste conforme seu gosto */
+    margin: 0 3px; /* espaço horizontal entre ícones */
+    vertical-align: middle; /* ajuda a alinhar se tiverem textos ao lado */
+}
+
+
 /* Estilo do card */
 
 .card {
