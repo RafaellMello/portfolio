@@ -737,7 +737,7 @@ h3:last-child {
   background-size: 800% 800%;
   animation: gradientShift 20s ease infinite;
 }
-}
+
 
 @keyframes gradientShift {
   0% {
@@ -819,6 +819,16 @@ h3:last-child {
   color: #f1f1f1;
   margin-bottom: 12px;
   margin-top: 37px;
+  line-height: 32px;
+}
+
+.whyme-card i {
+  font-size: 32px !important;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  text-align: center;
 }
 
 .whyme-card span {
