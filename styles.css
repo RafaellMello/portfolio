@@ -891,6 +891,12 @@ h3:last-child {
   .whyme-section {
     margin-top: -40px;
   }
+  .portfolio-section {
+    margin-top: 15px;
+  }
+  .portfolio-title{
+    margin-bottom: 40px;
+  }
 
 }
 
