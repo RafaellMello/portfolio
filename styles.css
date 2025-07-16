@@ -924,7 +924,7 @@ CSS para Seção de Cards - Planos Landing Page
         }
 
         .plans-section {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(50px);
     transition: all 0.6s ease-out;
 }
