@@ -951,7 +951,7 @@ CSS para Seção de Cards - Planos Landing Page
     margin-bottom: 20px;
 
     /* Glow maior e suave atrás do texto */
-    text-shadow: 5px 5px 6px rgba(6, 69, 94, 0.8);
+    text-shadow: 5px 5px 6px rgba(7, 48, 64, 0.8);
 }
 
 @media (min-width: 1024px) {
@@ -978,7 +978,7 @@ CSS para Seção de Cards - Planos Landing Page
         }
 
         .card {
-            background: rgba(0, 212, 255, 0.08);
+            background: rgba(0, 0, 0, 0.58);
             border-radius: 20px;
             padding: 40px 30px;
             position: relative;
@@ -1063,6 +1063,7 @@ CSS para Seção de Cards - Planos Landing Page
         }
 
         .price-value {
+            font-family: 'FontDev', sans-serif;
             font-size: 2.5rem;
             font-weight: bold;
             background: linear-gradient(45deg, #00d4ff, #0099cc);
