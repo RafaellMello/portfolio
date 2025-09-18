@@ -1170,3 +1170,16 @@ CSS para Seção de Cards - Planos Landing Page
                 font-size: 1rem;
             }
         }
+
+        /* Esconde sempre o vídeo dentro da .no-hover */
+.no-hover .portfolio-banner-hover {
+  display: none !important;
+}
+
+/* Garante que a imagem sempre apareça */
+.no-hover .portfolio-banner {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
