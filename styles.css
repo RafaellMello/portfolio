@@ -1055,7 +1055,7 @@ CSS para Seção de Cards - Planos Landing Page
             font-size: 1.1rem;
         }
 
-        .card-price {
+ /*       .card-price {
             text-align: center;
             margin-top: auto;
             padding-top: 20px;
@@ -1105,6 +1105,7 @@ CSS para Seção de Cards - Planos Landing Page
             box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
             background: linear-gradient(45deg, #0099cc, #00d4ff);
         }
+            */
 
         .badge {
             position: absolute;
