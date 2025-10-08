@@ -3,4 +3,4 @@ Disallow: /scripts/
 Disallow: /videos/
 Allow: /
 
-Sitemap: https://rafaellmello.github.io/portfolio/sitemap.xml
+Sitemap: https://rafaelmello.site/sitemap.xml
