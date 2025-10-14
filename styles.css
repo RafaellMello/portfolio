@@ -1082,31 +1082,34 @@ CSS para Seção de Cards - Planos Landing Page
             margin-bottom: 20px;
             font-weight: normal;
         }
+*/
 
         .cta-button {
-            background: linear-gradient(45deg, #00d4ff, #0099cc);
-            display: block;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            font-family: inherit;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    background: linear-gradient(45deg, #01aacc, #01526d);
+    display: block;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;  /* centraliza o texto horizontalmente */
+    line-height: normal; /* garante alinhamento vertical */
+}
+
 
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
             background: linear-gradient(45deg, #0099cc, #00d4ff);
         }
-            */
-
+            
         .badge {
             position: absolute;
             top: 8px;
@@ -1183,4 +1186,5 @@ CSS para Seção de Cards - Planos Landing Page
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 
