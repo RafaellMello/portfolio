@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /scripts/
-Disallow: /videos/
-Allow: /
+Allow: /videos/
+Allow: /videos/
 
 Sitemap: https://rafaelmello.site/sitemap.xml
