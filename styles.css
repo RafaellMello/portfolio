@@ -445,7 +445,7 @@ h3:last-child {
 }
 
 .project-title {
-    background-color: #323435; /* Cor de destaque para o título */
+    background-color: #000000; /* Cor de destaque para o título */
     color: white; /* Cor do texto */
     padding: 10px;
     margin: 0;
