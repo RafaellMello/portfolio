@@ -44,7 +44,7 @@ body {
 /* Gradiente de fundo */
 html {
     height: 100%;
-    background: radial-gradient(ellipse at bottom, #030b13 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, #030b13 0%, #000000 100%);
     overflow: hidden; /* Impede o transbordamento da página */
     width: 100%;
 }
@@ -157,7 +157,7 @@ html {
 }
 
 #title span {
-    background: -webkit-linear-gradient(white, #38495a);
+    background: -webkit-linear-gradient(white, #1e262f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
