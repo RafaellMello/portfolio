@@ -29,7 +29,7 @@ html, body {
 /* Cor de fundo do site */
 body {
     font-family: 'FontDev', sans-serif;
-    color: white;
+    color: transparent;
     display: flex;
     justify-content: center;
     align-items: flex-start;
