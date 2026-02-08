@@ -922,6 +922,18 @@ h3:last-child {
     margin-bottom: 40px;
   }
 
+  .project-title {
+    background-color: #000000; /* Cor de destaque para o título */
+    color: white; /* Cor do texto */
+    padding: 10px;
+    margin: 0;
+    font-size: 1.1rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante que o título ocupe toda a largura */
+    position: relative; /* Garante que o título fique acima da imagem */
+    z-index: 2; /* Garante que o título fique visível acima da imagem */
+}
+
 }
 
 
@@ -1199,5 +1211,29 @@ CSS para Seção de Cards - Planos Landing Page
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+.project-title {
+  align-items: center;
+  gap: clamp(4px, 0.6vw, 8px);
+}
+
+
+.project-title .flag {
+  width: 20px;
+  height: auto;
+  flex-shrink: 0;
+  margin-left: 0.3vw;
+}
+
+@media (max-width: 768px) {
+  .project-title .flag {
+    width: 20px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: clamp(6px, 1.5vw, 10px);
+    transform: translateY(1.3px); /* 👈 empurra pra baixo */
+  }
+}
+
 
 
