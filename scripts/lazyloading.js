@@ -1,31 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Para a seção de planos
-    const planObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.25
+    function makeObserver(threshold) {
+        return new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: threshold });
+    }
+
+    var planObserver = makeObserver(0.25);
+    var portfolioObserver = makeObserver(0.5);
+
+    document.querySelectorAll('.plans-section').forEach(function(el) {
+        planObserver.observe(el);
     });
 
-    // Para os itens do portfólio
-    const portfolioObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5
+    document.querySelectorAll('.portfolio-item').forEach(function(el) {
+        portfolioObserver.observe(el);
     });
-
-    const planSection = document.querySelectorAll('.plans-section');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    planSection.forEach(section => planObserver.observe(section));
-    portfolioItems.forEach(item => portfolioObserver.observe(item));
 });
