@@ -329,6 +329,14 @@ a {
     color: white;
     margin-bottom: 20px;
     text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.portfolio-title.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio-grid {
@@ -353,6 +361,14 @@ a {
     justify-content: space-between;
     position: relative;
     will-change: transform;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.portfolio-item.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio-item:hover {

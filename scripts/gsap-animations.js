@@ -1,15 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.defaults({ scroller: document.body });
-
 const isDesktop = window.matchMedia('(pointer: fine)').matches;
 
-// ─── Prevent FOUC: container visível, filhos escondidos ──────────────────
+// ─── Prevent FOUC: container visível, filhos do hero escondidos ──────────
 gsap.set('.container', { opacity: 1 });
 gsap.set(['.profile-image', 'h1', '.profile-section h2', '.logo', '.social-icon', '.pitch-section', '.card-menu'], { opacity: 0 });
-gsap.set('.portfolio-title', { opacity: 0 });
-gsap.set(['.section-title', '.card'], { opacity: 0 });
-gsap.set('.portfolio-item', { opacity: 0 });
 
 // ─── Hero Entrance Timeline ───────────────────────────────────────────────
 const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease: 'power3.out' } });
@@ -17,49 +12,50 @@ const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease: 'power3.out' } });
 heroTl
   .fromTo('.profile-image',
     { scale: 0.85, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 1, ease: 'power3.out' }
+    { scale: 1, opacity: 1, duration: 0.5, ease: 'power3.out' }
   )
   .fromTo('h1',
-    { y: 35, opacity: 0, filter: 'blur(10px)' },
-    { y: 0,  opacity: 1, filter: 'blur(0px)', duration: 0.8 },
-    '-=0.45'
+    { y: 20, opacity: 0, filter: 'blur(6px)' },
+    { y: 0,  opacity: 1, filter: 'blur(0px)', duration: 0.4 },
+    '-=0.35'
   )
   .fromTo('.profile-section h2',
-    { y: 20, opacity: 0 },
-    { y: 0,  opacity: 1, duration: 0.6 },
-    '-=0.35'
+    { y: 12, opacity: 0 },
+    { y: 0,  opacity: 1, duration: 0.32 },
+    '-=0.28'
   )
   .fromTo('.logo',
-    { y: 30, opacity: 0, scale: 0.3, rotation: -20 },
-    { y: 0,  opacity: 1, scale: 1, rotation: 0, duration: 0.55, stagger: 0.09, ease: 'back.out(2.8)' },
-    '-=0.25'
-  )
-  .fromTo('.social-icon',
-    { y: 25, opacity: 0, scale: 0.4 },
-    { y: 0,  opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: 'back.out(2.2)' },
+    { y: 15, opacity: 0, scale: 0.5, rotation: -10 },
+    { y: 0,  opacity: 1, scale: 1, rotation: 0, duration: 0.28, stagger: 0.05, ease: 'back.out(2.8)' },
     '-=0.2'
   )
+  .fromTo('.social-icon',
+    { y: 12, opacity: 0, scale: 0.5 },
+    { y: 0,  opacity: 1, scale: 1, duration: 0.22, stagger: 0.06, ease: 'back.out(2.2)' },
+    '-=0.12'
+  )
   .fromTo('.pitch-section',
-    { y: 28, opacity: 0 },
-    { y: 0,  opacity: 1, duration: 0.85 },
-    '-=0.1'
+    { y: 15, opacity: 0 },
+    { y: 0,  opacity: 1, duration: 0.32 },
+    '-=0.2'
   )
   .fromTo('.card-menu',
-    { y: 22, opacity: 0 },
-    { y: 0,  opacity: 1, duration: 0.6 },
-    '-=0.35'
+    { y: 12, opacity: 0 },
+    { y: 0,  opacity: 1, duration: 0.28 },
+    '-=0.24'
   )
   .call(() => {
-    // Glow na foto de perfil
-    gsap.to('.profile-image', {
-      boxShadow: '0 0 28px rgba(0,148,255,0.55), 0 0 55px rgba(0,80,200,0.22)',
-      duration: 2.6,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1
-    });
+    gsap.fromTo('.profile-image',
+      { boxShadow: '0 0 0px rgba(0,148,255,0), 0 0 0px rgba(0,80,200,0)' },
+      {
+        boxShadow: '0 0 30px rgba(0,148,255,0.65), 0 0 60px rgba(0,80,200,0.3)',
+        duration: 1.4,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1
+      }
+    );
 
-    // Glow pulse no botão CTA
     gsap.to('.section', {
       boxShadow: '0 0 22px rgba(255,255,255,0.1), 0 0 48px rgba(0,140,255,0.1)',
       borderColor: 'rgba(255,255,255,0.48)',
@@ -68,9 +64,6 @@ heroTl
       yoyo: true,
       repeat: -1
     });
-
-    // ScrollTriggers só após o hero terminar
-    setupScrollAnimations();
   });
 
 // ─── Logos magnéticas (desktop) ───────────────────────────────────────────
@@ -97,64 +90,6 @@ if (isDesktop) {
     gsap.to('#stars2', { x: x * 0.45, y: y * 0.45, duration: 2.2, ease: 'power1.out' });
     gsap.to('#stars3', { x: x,        y: y,        duration: 2.2, ease: 'power1.out' });
   });
-}
-
-// ─── ScrollTriggers (inicializados após o hero terminar) ─────────────────
-function setupScrollAnimations() {
-  if (!isDesktop) {
-    // Mobile: mostra tudo imediatamente, sem animação de scroll
-    gsap.set(['.portfolio-title', '.portfolio-item', '.section-title', '.card'], { opacity: 1, x: 0, y: 0, scale: 1, filter: 'none' });
-    return;
-  }
-
-  gsap.fromTo('.portfolio-title',
-    { opacity: 0, y: 55, letterSpacing: '18px' },
-    {
-      opacity: 1, y: 0, letterSpacing: '0px',
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '.portfolio-section', start: 'top 80%' }
-    }
-  );
-
-  document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-    gsap.fromTo(item,
-      { x: i % 2 === 0 ? -70 : 70, opacity: 0 },
-      {
-        x: 0, opacity: 1,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 90%',
-          toggleActions: 'play none none none'
-        }
-      }
-    );
-  });
-
-  ScrollTrigger.refresh();
-
-  gsap.fromTo('.section-title',
-    { opacity: 0, y: 48, filter: 'blur(7px)' },
-    {
-      opacity: 1, y: 0, filter: 'blur(0px)',
-      duration: 0.9,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '.plans-section', start: 'top 80%' }
-    }
-  );
-
-  gsap.fromTo('.card',
-    { y: 65, opacity: 0, scale: 0.91 },
-    {
-      y: 0, opacity: 1, scale: 1,
-      duration: 0.85,
-      stagger: 0.14,
-      ease: 'back.out(1.35)',
-      scrollTrigger: { trigger: '.cards-container', start: 'top 85%' }
-    }
-  );
 }
 
 // ─── 3D tilt nos portfolio items (desktop) ────────────────────────────────
