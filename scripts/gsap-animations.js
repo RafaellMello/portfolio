@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.defaults({ scroller: document.body });
+
 const isDesktop = window.matchMedia('(pointer: fine)').matches;
 
 // ─── Prevent FOUC: container visível, filhos escondidos ──────────────────
