@@ -144,13 +144,14 @@ body {
     }
 }
 
+.mobile-br { display: none; }
+
 /* ===== CONTAINER ===== */
 .container {
     width: 90vw;
     max-width: 1600px;
     margin: 0 auto;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0; /* GSAP seta para 1 imediatamente */
 }
 
 /* ===== PERFIL ===== */
@@ -351,12 +352,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    opacity: 0;
-    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
-}
-
-.portfolio-item.animate {
-    animation: fadeIn 2s ease-out forwards;
+    will-change: transform;
 }
 
 .portfolio-item:hover {
@@ -408,7 +404,7 @@ a {
     z-index: 1;
 }
 
-.portfolio-item:hover .portfolio-banner {
+.portfolio-item:has(.portfolio-banner-hover):hover .portfolio-banner {
     opacity: 0;
 }
 
@@ -445,14 +441,6 @@ a {
     max-width: 1600px;
     margin: 0 auto;
     padding: 60px 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.plans-section.animate {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .section-header {
@@ -725,6 +713,10 @@ a {
         display: none;
     }
 
+    .mobile-br {
+        display: inline;
+    }
+
     .portfolio-title {
         font-size: 50px;
         margin-bottom: 40px;
@@ -738,17 +730,15 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 90%;
-        padding: 0 10px;
+        width: 100%;
+        padding: 0;
         margin: 0 auto;
         box-sizing: border-box;
     }
 
     .portfolio-item {
-        width: 100%;
-        max-width: 420px;
-        aspect-ratio: 16 / 9;
-        height: auto;
+        width: 92vw;
+        height: 300px;
         margin-bottom: 20px;
     }
 
@@ -775,6 +765,8 @@ a {
 
     .plans-section {
         margin-top: -30px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .section-title {
@@ -784,9 +776,12 @@ a {
     .cards-container {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0;
     }
 
     .card {
+        width: 92vw;
+        margin: 0 auto;
         padding: 30px 20px;
         min-height: auto;
     }
@@ -841,6 +836,10 @@ a {
 }
 
 @media (min-width: 800px) and (max-width: 1025px) {
+    .pitch-section {
+        display: none;
+    }
+
     .portfolio-section {
         width: 800px;
         max-width: 100%;
@@ -856,12 +855,9 @@ a {
     }
 
     .portfolio-item {
-        width: 100% !important;
-        max-width: 500px !important;
-        aspect-ratio: 16 / 9 !important;
-        height: auto !important;
+        width: 460px !important;
+        height: 300px !important;
         margin: 0 auto;
-        opacity: 1 !important;
     }
 }
 
