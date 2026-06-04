@@ -101,6 +101,12 @@ if (isDesktop) {
 
 // ─── ScrollTriggers (inicializados após o hero terminar) ─────────────────
 function setupScrollAnimations() {
+  if (!isDesktop) {
+    // Mobile: mostra tudo imediatamente, sem animação de scroll
+    gsap.set(['.portfolio-title', '.portfolio-item', '.section-title', '.card'], { opacity: 1, x: 0, y: 0, scale: 1, filter: 'none' });
+    return;
+  }
+
   gsap.fromTo('.portfolio-title',
     { opacity: 0, y: 55, letterSpacing: '18px' },
     {
@@ -112,12 +118,10 @@ function setupScrollAnimations() {
   );
 
   document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-    const fromX = isDesktop ? (i % 2 === 0 ? -70 : 70) : 0;
-    const fromY = isDesktop ? 0 : 30;
     gsap.fromTo(item,
-      { x: fromX, y: fromY, opacity: 0 },
+      { x: i % 2 === 0 ? -70 : 70, opacity: 0 },
       {
-        x: 0, y: 0, opacity: 1,
+        x: 0, opacity: 1,
         duration: 0.9,
         ease: 'power3.out',
         scrollTrigger: {
