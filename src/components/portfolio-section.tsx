@@ -36,7 +36,7 @@ export interface Project {
 	image: string;
 	video?: string;
 	href: string;
-	objectPosition?: 'center' | 'top';
+	objectPosition?: 'center' | 'top' | 'top left';
 }
 
 export const projects: Project[] = [
@@ -58,6 +58,7 @@ export const projects: Project[] = [
 		flag: 'br',
 		image: '/telinhafix.png',
 		href: 'https://telinhafix.site',
+		objectPosition: 'top left',
 	},
 	{
 		title: 'ACTOP GEO Engenharia',
