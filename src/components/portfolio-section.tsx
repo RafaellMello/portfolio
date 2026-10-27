@@ -54,10 +54,10 @@ export const projects: Project[] = [
 		href: 'https://www.giuseppespizzerianc.com/',
 	},
 	{
-		title: 'Micro-SaaS PraiseHub',
+		title: 'TelinhaFix App/Web',
 		flag: 'br',
-		image: '/praisehub.png',
-		href: 'https://praisehub.vercel.app/',
+		image: '/telinhafix.png',
+		href: 'https://telinhafix.site',
 	},
 	{
 		title: 'ACTOP GEO Engenharia',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
 		href: 'https://pharmazoe.com.br/',
 	},
 	{
-		title: 'Landing Page Fiorelle',
+		title: 'Fiorelle Showcase',
 		flag: 'br',
 		image: '/fiorelle.png',
 		href: 'https://fiorelle.vercel.app/',
